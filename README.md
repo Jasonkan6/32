@@ -1,6 +1,5 @@
 the team number:32
-members’ personal particulars:
-1. 20586347, Chiu Lok Ying, lychiuab@connect.ust.hk
-2. 20736760, Kan Jie Sheng, jkanaa@connect.ust.hk
-3. 20734827, Chu Chih Tao, cchuaf@connect.ust.hk
-(student id, student name, email and individual task of function A/B/C)
+Student Name  |  StudentID  |  Github ID   |  Function Assigned  |  Is Team Leader
+Chu Chih Tao  |  20734827   |  PIGPIGCKCK  |       A             |
+Chiu Lok Ying |  20586347   |  LokYingCHIU |       B             |
+Kan Jie Sheng |  20736760   |  Jasonkan6   |       C             |        Y
