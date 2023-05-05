@@ -344,6 +344,7 @@ public class functionCController {
 //        System.out.println("Hello");
         systemMessageLabel.clear();
         messageNumber = 0;
+        getDefaultValue(null);
 
         System.out.println("Cap_Labor_Int:" + Cap_Labor_Int);
 
@@ -365,10 +366,7 @@ public class functionCController {
             // Compute the optimal mix of wines with the remaining resource of both labor and grape capacity
 //            System.out.println("i:" + max(remainingGrapeCapacity / Grape_Rose, remainingLaborCapacity / Labor_Rose));
 //
-//            System.out.println("j:" + max(remainingGrapeCapacity / Grape_Noir, remainingLaborCapacity / Labor_Noir));
-
-
-
+//            System.out.println("j:" + max(remainingGrapeCapacity / Grape_Noir, remainingLaborCapacity / Labor_Noir))
             for (int i = 0; i <= min(remainingGrapeCapacity / Grape_Rose, remainingLaborCapacity / Labor_Rose); i++) {
                 for (int j = 0; j <= min(remainingGrapeCapacity / Grape_Noir, remainingLaborCapacity / Labor_Noir); j++) {
                     if (i * Grape_Rose + j * Grape_Noir <= remainingGrapeCapacity &&
@@ -402,20 +400,19 @@ public class functionCController {
             showSystemMessage("w3: According to company policy, ratio of backorder volume should not lower than 70% of the optimal production volume!");
         }
 
-
         // Check the total revenue
         assert Opt_Revenue == Opt_Rose * Prc_Rose_Float + Opt_Noir * Prc_Noir_Float;
 
     }
     @FXML
     private void getDefaultValue(InputMethodEvent event) {
-        Num_Week_C.setText("2301");
-        Cap_Grape_C.setText("5000");
-        Cap_Labor_C.setText("12000");
-        Prc_Noir_C.setText("22");
-        Prc_Rose_C.setText("12");
-        Bko_Rose_C.setText("380");
-        Bko_Noir_C.setText("100");
+        if(Num_Week_C.getText() == ""){Num_Week_C.setText("2301");}
+        if(Cap_Grape_C.getText() == ""){Cap_Grape_C.setText("5000"); Cap_Grape_Int = Integer.parseInt(Cap_Grape_C.getText());}
+        if(Cap_Labor_C.getText() == ""){Cap_Labor_C.setText("12000"); Cap_Labor_Int = Integer.parseInt(Cap_Labor_C.getText());}
+        if(Prc_Noir_C.getText() == ""){Prc_Noir_C.setText("22"); Prc_Noir_Float = Float.parseFloat(Prc_Noir_C.getText());}
+        if(Prc_Rose_C.getText() == ""){Prc_Rose_C.setText("12"); Prc_Rose_Float = Float.parseFloat(Prc_Rose_C.getText());}
+        if(Bko_Rose_C.getText() == ""){Bko_Rose_C.setText("380");Bko_Rose_Int = Integer.parseInt(Bko_Rose_C.getText());}
+        if(Bko_Noir_C.getText() == ""){Bko_Noir_C.setText("100"); Bko_Noir_Int = Integer.parseInt(Bko_Noir_C.getText());}
 
     }
 
