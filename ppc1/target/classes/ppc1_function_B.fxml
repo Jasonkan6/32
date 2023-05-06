@@ -52,7 +52,7 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Text>
-            <VBox alignment="CENTER" layoutX="14.0" layoutY="51.0" prefHeight="175.0" prefWidth="280.0" style="-fx-background-color: lightgray; -fx-background-radius: 5;">
+            <VBox fx:id="input_con" alignment="CENTER" layoutX="14.0" layoutY="51.0" prefHeight="175.0" prefWidth="280.0" style="-fx-background-color: lightgray; -fx-background-radius: 5;">
                <children>
                   <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="280.0" spacing="10.0">
                      <children>
@@ -78,7 +78,7 @@
                   <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="280.0" spacing="10.0">
                      <children>
                         <Label prefWidth="75.0" text="Prc_Rose" />
-                        <TextField fx:id="Prx_Rose_tf" prefWidth="100.0" />
+                        <TextField fx:id="Prc_Rose_tf" prefWidth="100.0" />
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="A$" />
                      </children>
                   </HBox>
