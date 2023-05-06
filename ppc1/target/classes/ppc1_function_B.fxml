@@ -78,7 +78,7 @@
                   <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="280.0" spacing="10.0">
                      <children>
                         <Label prefWidth="75.0" text="Prc_Rose" />
-                        <TextField fx:id="Prx_Rose_tf" prefWidth="100.0" />
+                        <TextField fx:id="Prc_Rose_tf" prefWidth="100.0" />
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="A$" />
                      </children>
                   </HBox>
