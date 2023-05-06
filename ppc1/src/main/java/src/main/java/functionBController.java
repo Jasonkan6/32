@@ -122,45 +122,11 @@ public class functionBController {
     double Prc_Rose = -1;
     double Prc_Noir = -1;
 
-    public boolean component_init(TextField textField, boolean int_value, boolean upper_bounded, double upper_bound, boolean lower_bounded, double lower_bound)
-    {
-        try {
-            if (!textField.getText().isEmpty()) {
-                if ((lower_bounded && lower_bound > Integer.parseInt(textField.getText())) || (upper_bounded && upper_bound < Integer.parseInt(textField.getText()))) {
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                    alert.setTitle("error");
-                    alert.setHeaderText("input error");
-                    String alertStr = "Please enter a";
-                    alertStr+=(int_value)?"n integer":" number";
-                    alertStr+=(lower_bounded)?(" greater than "):"";
-                    alertStr+=(int_value)?((int)lower_bound):"";
-                    alertStr+=(lower_bounded&&upper_bounded)?" and":"";
-                    alertStr+=(upper_bounded)?(" less than "):".";
-                    alertStr+=(int_value)?((int)upper_bound+"."):"";
-                    alert.setContentText(alertStr);
-                    alert.showAndWait();
-                    textField.setText("");
-                } else { // desired input
-                    return true;
-                }
-            }
-            return false;
-        }
-        catch (NumberFormatException e) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("error");
-            alert.setHeaderText("input error");
-            alert.setContentText("Please enter an integer");
-            alert.showAndWait();
-            textField.setText("");
-            return false;
-        }
-    }
-
     public void initialize() {
+        compInit initializer = new compInit();
         weekOfYear_tf.focusedProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue) { // this component loses focus
-                if (component_init(weekOfYear_tf, true, true, 2315, true, 2301) == true)
+                if (initializer.component_init(weekOfYear_tf, true, true, 2315, true, 2301) == true)
                 {
                     weekOfYear = Integer.parseInt(weekOfYear_tf.getText());
                 }
@@ -169,7 +135,7 @@ public class functionBController {
 
         Cap_Labor_tf.focusedProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue) { // this component loses focus
-                if (component_init(Cap_Labor_tf, true, false, 0, true, 0)==true)
+                if (initializer.component_init(Cap_Labor_tf, true, false, 0, true, 0)==true)
                 {
                     Cap_Labor = Integer.parseInt(Cap_Labor_tf.getText());
                 }
@@ -178,7 +144,7 @@ public class functionBController {
 
         Cap_Grape_tf.focusedProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue) { // this component loses focus
-                if (component_init(Cap_Grape_tf, true, false, 0, true, 0)==true)
+                if (initializer.component_init(Cap_Grape_tf, true, false, 0, true, 0)==true)
                 {
                     Cap_Grape = Integer.parseInt(Cap_Grape_tf.getText());
                 }
@@ -187,7 +153,7 @@ public class functionBController {
 
         Prc_Rose_tf.focusedProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue) { // this component loses focus
-                if (component_init(Prc_Rose_tf, true, false, 0, true, 0)==true)
+                if (initializer.component_init(Prc_Rose_tf, true, false, 0, true, 0)==true)
                 {
                     Prc_Rose = Double.parseDouble(Prc_Rose_tf.getText());
                     DecimalFormat df = new DecimalFormat("#,##0.00");
@@ -200,7 +166,7 @@ public class functionBController {
 
         Prc_Noir_tf.focusedProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue) { // this component loses focus
-                if (component_init(Prc_Noir_tf, true, false, 0, true, 0)==true)
+                if (initializer.component_init(Prc_Noir_tf, true, false, 0, true, 0)==true)
                 {
                     Prc_Noir = Double.parseDouble(Prc_Noir_tf.getText());
                     DecimalFormat df = new DecimalFormat("#,##0.00");
