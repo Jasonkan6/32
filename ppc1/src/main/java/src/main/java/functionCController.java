@@ -11,7 +11,7 @@ import java.text.DecimalFormat;
 
 import static java.lang.Math.min;
 
-public class functionCController extends SystemMessage {
+public class functionCController extends Optimization {
 
     @FXML
     private TextField Bko_Noir_C;
@@ -328,11 +328,11 @@ public class functionCController extends SystemMessage {
 //        }
 //    }
 
-    int Labor_Rose = 5; //mins
-    int Labor_Noir = 12; //mins
-    int Grape_Rose = 6; //kgs
-    int Grape_Noir = 4;//kgs
-    int Prod_Cap = 5000; //litre
+//    int Labor_Rose = 5; //mins
+//    int Labor_Noir = 12; //mins
+//    int Grape_Rose = 6; //kgs
+//    int Grape_Noir = 4;//kgs
+//    int Prod_Cap = 5000; //litre
 //    int Cap_Labor_Int = Integer.parseInt(Cap_Labor_C != null ? Cap_Labor_C.getText():"0");
 
 
@@ -343,7 +343,7 @@ public class functionCController extends SystemMessage {
 //        // Reserve all resource of both labor and grape to backorders first
 //        System.out.println("Hello");
         systemMessageLabel.clear();
-        messageNumber = 0;
+
         getDefaultValue(null);
 
         System.out.println("Cap_Labor_Int:" + Cap_Labor_Int);
@@ -390,14 +390,16 @@ public class functionCController extends SystemMessage {
         or_Prod_Vol_Noir.setText(String.valueOf(Opt_Noir));
         or_Prod_Vol_Total.setText(String.valueOf(Opt_Rose + Opt_Noir));
         //Warning messages condition
+        SystemMessage s_C = new SystemMessage();
+        s_C.messageNumber = 0;
         if (Opt_Rose + Opt_Noir > Prod_Cap){
-            showSystemMessage("w1: Insufficient production capacity to produce the optimal mix, please reduce or adjust the capacity of labor & grape volum!", systemMessageLabel);
+            s_C.showSystemMessage("w1: Insufficient production capacity to produce the optimal mix, please reduce or adjust the capacity of labor & grape volum!", systemMessageLabel);
         }
         if (Opt_Rose*Grape_Rose + Opt_Noir*Grape_Noir < 0.9 * remainingGrapeCapacity){
-            showSystemMessage("w2: Insufficient labor supplied to utilize the grape resource (less than 90%)!", systemMessageLabel);
+            s_C.showSystemMessage("w2: Insufficient labor supplied to utilize the grape resource (less than 90%)!", systemMessageLabel);
         }
         if ((Bko_Rose_Int + Bko_Noir_Int) < 0.7 * (Opt_Rose + Opt_Noir)){
-            showSystemMessage("w3: According to company policy, ratio of backorder volume should not lower than 70% of the optimal production volume!", systemMessageLabel);
+            s_C.showSystemMessage("w3: According to company policy, ratio of backorder volume should not lower than 70% of the optimal production volume!", systemMessageLabel);
         }
 
         // Check the total revenue

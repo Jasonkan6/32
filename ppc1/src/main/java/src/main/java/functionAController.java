@@ -15,7 +15,7 @@ import java.text.DecimalFormat;
 
 import static java.lang.Math.min;
 
-public class functionAController extends SystemMessage {
+public class functionAController extends Optimization {
 
     @FXML
     private TextField Cap_Grape;
@@ -297,48 +297,54 @@ public class functionAController extends SystemMessage {
 
     public void toexit(ActionEvent actionEvent) {Main.stage.setScene(Main.scene);
     }
-    int Labor_Rose = 5; //mins
-    int Labor_Noir = 12; //mins
-    int Grape_Rose = 6; //kgs
-    int Grape_Noir = 4;//kgs
-    int Prod_Cap = 5000; //litre
+//    int Labor_Rose = 5; //mins
+//    int Labor_Noir = 12; //mins
+//    int Grape_Rose = 6; //kgs
+//    int Grape_Noir = 4;//kgs
+//    int Prod_Cap = 5000; //litre
     public void toclick(ActionEvent actionEvent) {
-        int Opt_Profit = 0;
-        int Labor_Rate  = 935 / (int)(37.5 * 60);
-        int x_out = 0;
-        int y_out = 0;
-        float Opt_Margin = 0;
+//        int Opt_Profit = 0;
+//
+//        int x_out = 0;
+//        int y_out = 0;
+//        float Opt_Margin = 0;
+//
+//        for (int i = 0; i <= min(Cap_Grape_Int_A / Grape_Rose, Cap_Labor_Int_A / Labor_Rose); i++) {
+//            for (int j = 0; j <= min(Cap_Grape_Int_A / Grape_Noir, Cap_Labor_Int_A / Labor_Noir); j++) {
+//                if (i * Grape_Rose + j * Grape_Noir <= Cap_Grape_Int_A &&
+//                        i * Labor_Rose + j * Labor_Noir <= Cap_Labor_Int_A) {
+//                    int VCL = (Labor_Rose * i + Labor_Noir * j) * Labor_Rate ;
+//                    float SR = i * Prc_Rose_Float_A + j * Prc_Noir_Float_A;
+//                    float GP = SR - VCL - Fixed_Costs_A;
+//                    if (GP > Opt_Profit) {
+//                        Opt_Profit = (int) GP;
+//                        x_out = i;
+//                        y_out = j;
+//                        Opt_Margin = (float)Opt_Profit / SR *100;
+//                    }
+//                }
+//            }
+//        }
 
-        for (int i = 0; i <= min(Cap_Grape_Int_A / Grape_Rose, Cap_Labor_Int_A / Labor_Rose); i++) {
-            for (int j = 0; j <= min(Cap_Grape_Int_A / Grape_Noir, Cap_Labor_Int_A / Labor_Noir); j++) {
-                if (i * Grape_Rose + j * Grape_Noir <= Cap_Grape_Int_A &&
-                        i * Labor_Rose + j * Labor_Noir <= Cap_Labor_Int_A) {
-                    int VCL = (Labor_Rose * i + Labor_Noir * j) * Labor_Rate ;
-                    float SR = i * Prc_Rose_Float_A + j * Prc_Noir_Float_A;
-                    float GP = SR - VCL - Fixed_Costs_A;
-                    if (GP > Opt_Profit) {
-                        Opt_Profit = (int) GP;
-                        x_out = i;
-                        y_out = j;
-                        Opt_Margin = (float)Opt_Profit / SR *100;
-                    }
-                }
-            }
-        }
-        System.out.println("Opt_Profit:" + Opt_Profit);
+        Object[] func_A = Opt_A(Cap_Grape_Int_A, Cap_Labor_Int_A, Prc_Rose_Float_A, Prc_Noir_Float_A, Fixed_Costs_A);
+        System.out.println("Opt_Profit:" + func_A[0]);
+
         DecimalFormat df = new DecimalFormat("#.#");
-        or_Gross_Profit.setText(String.valueOf(Opt_Profit));
-        or_Profit_Margin.setText(String.valueOf(df.format(Opt_Margin)));
-        or_Prod_Vol_Rose_A.setText(String.valueOf(x_out));
-        or_Prod_Vol_Noir_A.setText(String.valueOf(y_out));
-        or_Prod_Vol_Total_A.setText(String.valueOf(x_out + y_out));
+        or_Gross_Profit.setText(String.valueOf(func_A[0]));
+        or_Profit_Margin.setText(String.valueOf(df.format(func_A[3])));
+        or_Prod_Vol_Rose_A.setText(String.valueOf(func_A[1]));
+        or_Prod_Vol_Noir_A.setText(String.valueOf(func_A[2]));
+        or_Prod_Vol_Total_A.setText(String.valueOf((int)func_A[1] + (int)func_A[2]));
 
         //Warning messages condition
-        if (x_out + y_out > Prod_Cap * Num_Week_A){
-            showSystemMessage("w1: Insufficient production capacity to produce the optimal mix, please reduce or adjust the capacity of labor & grape volum!", systemMessageLabel_A);
+        SystemMessage s_A = new SystemMessage();
+        s_A.messageNumber = 0;
+
+        if ((int)func_A[1] + (int)func_A[2] > Prod_Cap * Num_Week_A){
+            s_A.showSystemMessage("w1: Insufficient production capacity to produce the optimal mix, please reduce or adjust the capacity of labor & grape volum!", systemMessageLabel_A);
         }
-        if (x_out*Grape_Rose + y_out*Grape_Noir < 0.9 * Cap_Grape_Int_A){
-            showSystemMessage("w2: Insufficient labor supplied to utilize the grape resource (less than 90%)!", systemMessageLabel_A);
+        if ((int)func_A[1]*Grape_Rose + (int)func_A[2]*Grape_Noir < 0.9 * Cap_Grape_Int_A){
+            s_A.showSystemMessage("w2: Insufficient labor supplied to utilize the grape resource (less than 90%)!", systemMessageLabel_A);
         }
 
     }
