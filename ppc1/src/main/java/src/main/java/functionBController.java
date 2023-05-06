@@ -129,7 +129,7 @@ public class functionBController {
     int Grape_Noir = 4;     // kgs
     int Prod_Cap = 5000;    // litre
 
-    public void initialize() {
+    public boolean initialize() {
         compInit initializer = new compInit();
         weekOfYear_tf.focusedProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue) { // this component loses focus
@@ -182,6 +182,14 @@ public class functionBController {
             }
         });
 
+        if (weekOfYear!=-1 && Cap_Labor!=-1 && Cap_Grape!= -1 && Prc_Rose!=-1 && Prc_Noir!=-1)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     @FXML
@@ -251,13 +259,22 @@ public class functionBController {
 
 
     @FXML
-    private void getDefaultValue()
+    private boolean getDefaultValue()
     {
         if(weekOfYear_tf.getText() == ""){weekOfYear_tf.setText("2301");}
         if(Cap_Labor_tf.getText() == ""){Cap_Labor_tf.setText("12000"); Cap_Labor = Integer.parseInt(Cap_Labor_tf.getText());}
         if(Cap_Grape_tf.getText() == ""){Cap_Grape_tf.setText("5000"); Cap_Grape = Integer.parseInt(Cap_Grape_tf.getText());}
         if(Prc_Rose_tf.getText() == ""){Prc_Rose_tf.setText("12"); Prc_Rose = Double.parseDouble(Prc_Rose_tf.getText());}
         if(Prc_Noir_tf.getText() == ""){Prc_Noir_tf.setText("22"); Prc_Noir = Double.parseDouble(Prc_Noir_tf.getText());}
+
+        if (weekOfYear!=-1 && Cap_Labor!=-1 && Cap_Grape!=-1 && Prc_Rose!=-1 && Prc_Noir!=-1)
+        {
+            return true; // all the input values are initialized
+        }
+        else
+        {
+            return false; // all the input values are initialized
+        }
     }
 
     public Vector<Integer> getOpt(int Grape_Cap, int Rose_Grape, int Noir_Grape, int Rose_Labor, int Noir_Labor, int Labor_Cap, double Rose_Prc, double Noir_Prc)

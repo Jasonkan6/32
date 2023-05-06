@@ -7,7 +7,7 @@ public class compInit {
     public boolean component_init(TextField textField, boolean int_value, boolean upper_bounded, double upper_bound, boolean lower_bounded, double lower_bound)
     {
         try {
-            if (!textField.getText().isEmpty()) {
+            if (!textField.getText().isEmpty()) { // do nothing when the textfield is left empty
                 if (int_value==true)
                 {
                     if ((lower_bounded && lower_bound > Integer.parseInt(textField.getText())) || (upper_bounded && upper_bound < Integer.parseInt(textField.getText()))) {
