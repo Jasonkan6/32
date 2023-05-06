@@ -9,8 +9,5 @@
         <module name="ppc" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="ppc" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>
