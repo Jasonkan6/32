@@ -10,6 +10,7 @@ import javafx.scene.control.*;
 import javafx.scene.input.InputMethodEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Line;
+import javafx.scene.text.Text;
 
 import java.text.DecimalFormat;
 import java.util.Vector;
@@ -134,8 +135,9 @@ public class functionAController extends Optimization {
 
     @FXML
     private Line vLine3;
+
     @FXML
-    private TextField systemMessageLabel_A;
+    private Text systemMessageLabel_A;
 
     int Cap_Labor_Int_A = -1;
     int Cap_Grape_Int_A = -1;

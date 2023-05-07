@@ -55,7 +55,6 @@ public class Optimization {
                 }
             }
         }
-
         return new Object[]{opt_rev, opt_rose, opt_noir};
     }
 }

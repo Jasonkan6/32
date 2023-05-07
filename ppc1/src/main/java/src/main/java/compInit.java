@@ -23,7 +23,6 @@ public class compInit {
                         alertStr+=(lower_bounded)?(" >= "+(int)lower_bound):"";
                         alertStr+=(lower_bounded&&upper_bounded)?" and":"";
                         alertStr+=(upper_bounded)?(" <= "+(int)upper_bound):".";
-//                        gen_alert(alertStr);
                         textField.setText("");
                         return alertStr;
                     }
@@ -38,7 +37,6 @@ public class compInit {
                         alertStr+=(lower_bounded)?(" >= "+lower_bound):"";
                         alertStr+=(lower_bounded&&upper_bounded)?" and":"";
                         alertStr+=(upper_bounded)?(" <= "+upper_bound):".";
-//                        gen_alert(alertStr);
                         textField.setText("");
                         return alertStr;
                     }
@@ -59,7 +57,6 @@ public class compInit {
             {
                 alertStr = "Please enter a number.";
             }
-//            gen_alert(alertStr);
             textField.setText("");
             return alertStr;
         }

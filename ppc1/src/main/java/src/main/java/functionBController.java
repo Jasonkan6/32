@@ -100,11 +100,11 @@ public class functionBController extends Optimization{
 
     private Button run_btn;
 
- 
+
 
     @FXML
 
-    private TextField sys_msg_txt;
+    private Text sys_msg_txt;
 
  
 
@@ -241,7 +241,7 @@ public class functionBController extends Optimization{
         Opt_Rose_txt.setText(Integer.toString(Opt_Rose));
         Opt_Noir_txt.setText(Integer.toString(Opt_Noir));
         Opt_Total_txt.setText(Integer.toString(Opt_Rose+Opt_Noir));
-        Opt_Total_Revenue_txt.setText(Double.toString(Opt_Total_Revenue));
+        Opt_Total_Revenue_txt.setText(Integer.toString(Opt_Total_Revenue));
         Opt_Labor_Surplus_txt.setText(Integer.toString(Sur_Labor));
         Opt_Grape_Surplus_txt.setText(Integer.toString(Sur_Grape));
 
