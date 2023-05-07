@@ -16,6 +16,10 @@ public class SysMessengerTest {
         new JFXPanel();
     }
 
+    @BeforeClass
+    public static void initToolkit() {
+        new JFXPanel();
+    }
     @Test
     public void testShowSystemMessage_empty()
     {
