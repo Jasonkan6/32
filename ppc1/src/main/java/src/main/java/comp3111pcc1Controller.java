@@ -38,7 +38,7 @@ public class comp3111pcc1Controller {
 
     @FXML
     private void Bfunction(ActionEvent event) throws IOException{
-        Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/ppc1_function_B.fxml")));
+        Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/ppc1_function_B_1.fxml")));
         Main.stage.setScene(scene);
     }
 
