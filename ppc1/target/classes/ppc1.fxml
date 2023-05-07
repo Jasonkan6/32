@@ -102,7 +102,7 @@
                   <Glow />
                </effect>
             </Label>
-            <Button fx:id="function1" layoutX="159.0" layoutY="113.0" mnemonicParsing="false" onAction="#Afunction" prefHeight="30.0" prefWidth="348.0" style="-fx-background-color: orange;" text="Annual Forecast by Gross Profit" textFill="#171817" />
+            <Button fx:id="function1" alignment="CENTER" layoutX="159.0" layoutY="113.0" mnemonicParsing="false" onAction="#Afunction" prefHeight="30.0" prefWidth="348.0" style="-fx-background-color: orange; -fx-font-size: 15;" text="Annual Forecast by Gross Profit" />
       </children>
          <opaqueInsets>
             <Insets />

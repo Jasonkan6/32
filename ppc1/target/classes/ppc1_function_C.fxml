@@ -179,7 +179,7 @@
                   <ColorAdjust />
                </effect>
             </TextField>
-            <TextField fx:id="systemMessageLabel" accessibleRole="TEXT" alignment="CENTER_RIGHT" editable="false" layoutX="22.0" layoutY="373.0" opacity="0.84" prefHeight="115.0" prefWidth="743.0" style="-fx-background-color: grey;">
+            <TextField fx:id="systemMessageLabel" accessibleRole="TEXT" alignment="TOP_LEFT" editable="false" layoutX="22.0" layoutY="373.0" opacity="0.84" prefHeight="115.0" prefWidth="743.0" style="-fx-background-color: grey;">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>

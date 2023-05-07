@@ -1,203 +1,199 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
 
-<!--
-  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
-  All rights reserved. Use is subject to license terms.
+<!--&lt;!&ndash;-->
+<!--  Copyright (c) 2015, 2019, Gluon and/or its affiliates.-->
+<!--  All rights reserved. Use is subject to license terms.-->
 
-  This file is available and licensed under the following license:
+<!--  This file is available and licensed under the following license:-->
 
-  Redistribution and use in source and binary forms, with or without
-  modification, are permitted provided that the following conditions
-  are met:
+<!--  Redistribution and use in source and binary forms, with or without-->
+<!--  modification, are permitted provided that the following conditions-->
+<!--  are met:-->
 
-  - Redistributions of source code must retain the above copyright
-    notice, this list of conditions and the following disclaimer.
-  - Redistributions in binary form must reproduce the above copyright
-    notice, this list of conditions and the following disclaimer in
-    the documentation and/or other materials provided with the distribution.
-  - Neither the name of Oracle Corporation nor the names of its
-    contributors may be used to endorse or promote products derived
-    from this software without specific prior written permission.
+<!--  - Redistributions of source code must retain the above copyright-->
+<!--    notice, this list of conditions and the following disclaimer.-->
+<!--  - Redistributions in binary form must reproduce the above copyright-->
+<!--    notice, this list of conditions and the following disclaimer in-->
+<!--    the documentation and/or other materials provided with the distribution.-->
+<!--  - Neither the name of Oracle Corporation nor the names of its-->
+<!--    contributors may be used to endorse or promote products derived-->
+<!--    from this software without specific prior written permission.-->
 
-  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
-  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
-  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
-  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
-  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
-  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
-  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
-  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
--->
+<!--  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS-->
+<!--  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT-->
+<!--  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR-->
+<!--  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT-->
+<!--  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,-->
+<!--  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT-->
+<!--  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,-->
+<!--  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY-->
+<!--  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT-->
+<!--  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE-->
+<!--  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
+<!--&ndash;&gt;-->
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Line?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<!--<?import javafx.geometry.Insets?>-->
+<!--<?import javafx.scene.control.Button?>-->
+<!--<?import javafx.scene.control.Label?>-->
+<!--<?import javafx.scene.control.TextField?>-->
+<!--<?import javafx.scene.layout.AnchorPane?>-->
+<!--<?import javafx.scene.layout.HBox?>-->
+<!--<?import javafx.scene.layout.VBox?>-->
+<!--<?import javafx.scene.shape.Line?>-->
+<!--<?import javafx.scene.text.Font?>-->
+<!--<?import javafx.scene.text.Text?>-->
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.main.java.functionBController">
-  <children>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
-      <children>
-            <Text fx:id="title" layoutX="13.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[A2.2.B] Weekly Review by Revenue" textAlignment="CENTER" wrappingWidth="613.3333841959636" AnchorPane.bottomAnchor="364.0" AnchorPane.topAnchor="12.0">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Text>
-            <VBox fx:id="input_con" alignment="CENTER" layoutX="14.0" layoutY="51.0" prefHeight="175.0" prefWidth="280.0" style="-fx-background-color: lightgray; -fx-background-radius: 5;">
-               <children>
-                  <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="280.0" spacing="10.0">
-                     <children>
-                        <Label prefWidth="75.0" text="WeekOfYear" />
-                        <TextField fx:id="weekOfYear_tf" prefWidth="100.0" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Weeks" />
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="280.0" spacing="10.0">
-                     <children>
-                        <Label prefHeight="15.0" prefWidth="75.0" text="Cap_Labor" />
-                        <TextField fx:id="Cap_Labor_tf" prefWidth="100.0" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Minutes" />
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="280.0" spacing="10.0">
-                     <children>
-                        <Label prefWidth="75.0" text="Cap_Grape" />
-                        <TextField fx:id="Cap_Grape_tf" prefWidth="100.0" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kgs" />
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="280.0" spacing="10.0">
-                     <children>
-                        <Label prefWidth="75.0" text="Prc_Rose" />
-                        <TextField fx:id="Prc_Rose_tf" prefWidth="100.0" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="A$" />
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="280.0" spacing="10.0">
-                     <children>
-                        <Label prefWidth="75.0" text="Prc_Noir" />
-                        <TextField fx:id="Prc_Noir_tf" prefWidth="100.0" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="A$" />
-                     </children>
-                  </HBox>
-               </children>
-               <padding>
-                  <Insets left="5.0" />
-               </padding>
-            </VBox>
-            <VBox alignment="CENTER" layoutX="386.0" layoutY="51.0" prefHeight="175.0" prefWidth="240.0" style="-fx-border-color: black; -fx-border-radius: 5;">
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Optimized Solution" textAlignment="CENTER" underline="true" wrappingWidth="140.0">
-                     <VBox.margin>
-                        <Insets bottom="5.0" top="5.0" />
-                     </VBox.margin>
-                     <font>
-                        <Font size="13.0" />
-                     </font>
-                  </Text>
-                  <Label text="Production Volume (Litre)" />
-                  <HBox alignment="CENTER" prefHeight="40.0" prefWidth="230.0" style="-fx-border-width: 1 0 1 0; -fx-border-color: lightgray;">
-                     <children>
-                        <VBox alignment="CENTER" prefHeight="38.0" prefWidth="75.0">
-                           <children>
-                              <Label text="Opt_Rose">
-                                 <opaqueInsets>
-                                    <Insets />
-                                 </opaqueInsets>
-                              </Label>
-                              <Text fx:id="Opt_Rose_txt" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
-                           </children>
-                        </VBox>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="75.0">
-                           <children>
-                              <Label text="Opt_Noir" />
-                              <Text fx:id="Opt_Noir_txt" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
-                           </children>
-                        </VBox>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="75.0">
-                           <children>
-                              <Label text="Total" />
-                              <Text fx:id="Opt_Total_txt" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
-                           </children>
-                        </VBox>
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="240.0" spacing="5.0">
-                     <children>
-                        <Label prefWidth="90.0" text="Total Revenue: ">
-                           <HBox.margin>
-                              <Insets left="5.0" />
-                           </HBox.margin>
-                        </Label>
-                        <Text fx:id="Opt_Total_Revenue_txt" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="RIGHT" wrappingWidth="80.0" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="A$" />
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="240.0" spacing="5.0">
-                     <children>
-                        <Label prefWidth="90.0" text="Labor Surplus: ">
-                           <HBox.margin>
-                              <Insets left="5.0" />
-                           </HBox.margin>
-                        </Label>
-                        <Text fx:id="Opt_Labor_Surplus_txt" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="RIGHT" wrappingWidth="80.0" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Minutes" />
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="240.0" spacing="5.0">
-                     <children>
-                        <Label prefWidth="90.0" text="Grape Surplus: ">
-                           <HBox.margin>
-                              <Insets left="5.0" />
-                           </HBox.margin>
-                        </Label>
-                        <Text fx:id="Opt_Grape_Surplus_txt" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="RIGHT" wrappingWidth="80.0" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kgs" />
-                     </children>
-                  </HBox>
-               </children>
-            </VBox>
-            <Button fx:id="run_btn" layoutX="320.0" layoutY="104.0" mnemonicParsing="false" onAction="#run_buttonPressed" text="Run" />
-            <Button fx:id="exit_btn" layoutX="321.0" layoutY="151.0" mnemonicParsing="false" onAction="#exit_buttonPressed" text="Exit" />
-            <VBox layoutX="18.0" layoutY="246.0" prefHeight="60.0" prefWidth="600.0" style="-fx-border-color: gray; -fx-border-radius: 2; -fx-border-width: 1 0 0 0;">
-               <children>
-                  <Label text="Field Validation: ">
-                     <VBox.margin>
-                        <Insets left="5.0" top="5.0" />
-                     </VBox.margin>
-                  </Label>
-                  <Text fx:id="field_Valid_txt" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="590.0">
-                     <VBox.margin>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </VBox.margin>
-                  </Text>
-               </children>
-            </VBox>
-            <VBox layoutX="19.0" layoutY="312.0" prefHeight="80.0" prefWidth="600.0" style="-fx-border-radius: 2; -fx-border-color: gray; -fx-border-width: 1 0 0 0;">
-               <children>
-                  <Label text="System Messages: ">
-                     <VBox.margin>
-                        <Insets left="5.0" top="5.0" />
-                     </VBox.margin>
-                  </Label>
-                  <Text fx:id="sys_msg_txt" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="590.0">
-                     <VBox.margin>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </VBox.margin>
-                  </Text>
-               </children>
-            </VBox>
-            <Line endX="640.0" endY="-3.814697265625E-6" layoutY="43.0" />
-      </children>
-    </AnchorPane>
-  </children>
-</VBox>
+<!--<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.main.java.functionBController">-->
+<!--  <children>-->
+<!--    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">-->
+<!--      <children>-->
+<!--            <Text fx:id="title" layoutX="13.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[A2.2.B] Weekly Review by Revenue" textAlignment="CENTER" wrappingWidth="613.3333841959636" AnchorPane.bottomAnchor="364.0" AnchorPane.topAnchor="12.0">-->
+<!--               <font>-->
+<!--                  <Font name="System Bold" size="18.0" />-->
+<!--               </font>-->
+<!--            </Text>-->
+<!--            <VBox fx:id="input_con" alignment="CENTER" layoutX="14.0" layoutY="51.0" prefHeight="175.0" prefWidth="280.0" style="-fx-background-color: lightgray; -fx-background-radius: 5;">-->
+<!--               <children>-->
+<!--                  <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="280.0" spacing="10.0">-->
+<!--                     <children>-->
+<!--                        <Label prefWidth="75.0" text="WeekOfYear" />-->
+<!--                        <TextField fx:id="weekOfYear_tf" prefWidth="100.0" />-->
+<!--                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Weeks" />-->
+<!--                     </children>-->
+<!--                  </HBox>-->
+<!--                  <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="280.0" spacing="10.0">-->
+<!--                     <children>-->
+<!--                        <Label prefHeight="15.0" prefWidth="75.0" text="Cap_Labor" />-->
+<!--                        <TextField fx:id="Cap_Labor_tf" prefWidth="100.0" />-->
+<!--                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Minutes" />-->
+<!--                     </children>-->
+<!--                  </HBox>-->
+<!--                  <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="280.0" spacing="10.0">-->
+<!--                     <children>-->
+<!--                        <Label prefWidth="75.0" text="Cap_Grape" />-->
+<!--                        <TextField fx:id="Cap_Grape_tf" prefWidth="100.0" />-->
+<!--                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kgs" />-->
+<!--                     </children>-->
+<!--                  </HBox>-->
+<!--                  <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="280.0" spacing="10.0">-->
+<!--                     <children>-->
+<!--                        <Label prefWidth="75.0" text="Prc_Rose" />-->
+<!--                        <TextField fx:id="Prc_Rose_tf" prefWidth="100.0" />-->
+<!--                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="A$" />-->
+<!--                     </children>-->
+<!--                  </HBox>-->
+<!--                  <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="280.0" spacing="10.0">-->
+<!--                     <children>-->
+<!--                        <Label prefWidth="75.0" text="Prc_Noir" />-->
+<!--                        <TextField fx:id="Prc_Noir_tf" prefWidth="100.0" />-->
+<!--                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="A$" />-->
+<!--                     </children>-->
+<!--                  </HBox>-->
+<!--               </children>-->
+<!--               <padding>-->
+<!--                  <Insets left="5.0" />-->
+<!--               </padding>-->
+<!--            </VBox>-->
+<!--            <VBox alignment="CENTER" layoutX="386.0" layoutY="51.0" prefHeight="175.0" prefWidth="240.0" style="-fx-border-color: black; -fx-border-radius: 5;">-->
+<!--               <children>-->
+<!--                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Optimized Solution" textAlignment="CENTER" underline="true" wrappingWidth="140.0">-->
+<!--                     <VBox.margin>-->
+<!--                        <Insets bottom="5.0" top="5.0" />-->
+<!--                     </VBox.margin>-->
+<!--                     <font>-->
+<!--                        <Font size="13.0" />-->
+<!--                     </font>-->
+<!--                  </Text>-->
+<!--                  <Label text="Production Volume (Litre)" />-->
+<!--                  <HBox alignment="CENTER" prefHeight="40.0" prefWidth="230.0" style="-fx-border-width: 1 0 1 0; -fx-border-color: lightgray;">-->
+<!--                     <children>-->
+<!--                        <VBox alignment="CENTER" prefHeight="38.0" prefWidth="75.0">-->
+<!--                           <children>-->
+<!--                              <Label text="Opt_Rose">-->
+<!--                                 <opaqueInsets>-->
+<!--                                    <Insets />-->
+<!--                                 </opaqueInsets>-->
+<!--                              </Label>-->
+<!--                              <Text fx:id="Opt_Rose_txt" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />-->
+<!--                           </children>-->
+<!--                        </VBox>-->
+<!--                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="75.0">-->
+<!--                           <children>-->
+<!--                              <Label text="Opt_Noir" />-->
+<!--                              <Text fx:id="Opt_Noir_txt" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />-->
+<!--                           </children>-->
+<!--                        </VBox>-->
+<!--                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="75.0">-->
+<!--                           <children>-->
+<!--                              <Label text="Total" />-->
+<!--                              <Text fx:id="Opt_Total_txt" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />-->
+<!--                           </children>-->
+<!--                        </VBox>-->
+<!--                     </children>-->
+<!--                  </HBox>-->
+<!--                  <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="240.0" spacing="5.0">-->
+<!--                     <children>-->
+<!--                        <Label prefWidth="90.0" text="Total Revenue: ">-->
+<!--                           <HBox.margin>-->
+<!--                              <Insets left="5.0" />-->
+<!--                           </HBox.margin>-->
+<!--                        </Label>-->
+<!--                        <Text fx:id="Opt_Total_Revenue_txt" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="RIGHT" wrappingWidth="80.0" />-->
+<!--                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="A$" />-->
+<!--                     </children>-->
+<!--                  </HBox>-->
+<!--                  <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="240.0" spacing="5.0">-->
+<!--                     <children>-->
+<!--                        <Label prefWidth="90.0" text="Labor Surplus: ">-->
+<!--                           <HBox.margin>-->
+<!--                              <Insets left="5.0" />-->
+<!--                           </HBox.margin>-->
+<!--                        </Label>-->
+<!--                        <Text fx:id="Opt_Labor_Surplus_txt" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="RIGHT" wrappingWidth="80.0" />-->
+<!--                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Minutes" />-->
+<!--                     </children>-->
+<!--                  </HBox>-->
+<!--                  <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="240.0" spacing="5.0">-->
+<!--                     <children>-->
+<!--                        <Label prefWidth="90.0" text="Grape Surplus: ">-->
+<!--                           <HBox.margin>-->
+<!--                              <Insets left="5.0" />-->
+<!--                           </HBox.margin>-->
+<!--                        </Label>-->
+<!--                        <Text fx:id="Opt_Grape_Surplus_txt" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="RIGHT" wrappingWidth="80.0" />-->
+<!--                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kgs" />-->
+<!--                     </children>-->
+<!--                  </HBox>-->
+<!--               </children>-->
+<!--            </VBox>-->
+<!--            <Button fx:id="run_btn" layoutX="320.0" layoutY="104.0" mnemonicParsing="false" onAction="#run_buttonPressed" text="Run" />-->
+<!--            <Button fx:id="exit_btn" layoutX="321.0" layoutY="151.0" mnemonicParsing="false" onAction="#exit_buttonPressed" text="Exit" />-->
+<!--            <VBox layoutX="18.0" layoutY="246.0" prefHeight="60.0" prefWidth="600.0" style="-fx-border-color: gray; -fx-border-radius: 2; -fx-border-width: 1 0 0 0;">-->
+<!--               <children>-->
+<!--                  <Label text="Field Validation: ">-->
+<!--                     <VBox.margin>-->
+<!--                        <Insets left="5.0" top="5.0" />-->
+<!--                     </VBox.margin>-->
+<!--                  </Label>-->
+<!--                  <Text fx:id="field_Valid_txt" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="590.0">-->
+<!--                     <VBox.margin>-->
+<!--                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />-->
+<!--                     </VBox.margin>-->
+<!--                  </Text>-->
+<!--               </children>-->
+<!--            </VBox>-->
+<!--            <VBox layoutX="19.0" layoutY="312.0" prefHeight="80.0" prefWidth="600.0" style="-fx-border-radius: 2; -fx-border-color: gray; -fx-border-width: 1 0 0 0;">-->
+<!--               <children>-->
+<!--                  <Label text="System Messages: ">-->
+<!--                     <VBox.margin>-->
+<!--                        <Insets left="5.0" top="5.0" />-->
+<!--                     </VBox.margin>-->
+<!--                  </Label>-->
+<!--                  <TextField fx:id="sys_msg_txt" prefWidth="100.0" />-->
+<!--               </children>-->
+<!--            </VBox>-->
+<!--            <Line endX="640.0" endY="-3.814697265625E-6" layoutY="43.0" />-->
+<!--      </children>-->
+<!--    </AnchorPane>-->
+<!--  </children>-->
+<!--</VBox>-->
