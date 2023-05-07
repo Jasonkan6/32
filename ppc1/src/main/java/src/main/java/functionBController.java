@@ -123,11 +123,6 @@ public class functionBController extends Optimization{
     Integer Cap_Grape = -1;
     double Prc_Rose = -1;
     double Prc_Noir = -1;
-//    int Labor_Rose = 5;     // mins, labor consumption to make a quart (Litre) of wine
-//    int Labor_Noir = 12;    // mins
-//    int Grape_Rose = 6;     // kgs, grape consumption to make a quart (Litre) of wine
-//    int Grape_Noir = 4;     // kgs
-//    int Prod_Cap = 5000;    // litre
 
     public boolean initialize() {
         compInit initializer = new compInit();
@@ -245,25 +240,6 @@ public class functionBController extends Optimization{
             Sys_Msgs.add("Er1b: Program bug is occurred, Grape Consumption cannot greater than its capacity!");
         }
         msg.showSystemMessage(sys_msg_txt, Sys_Msgs);
-//        SystemMessage s_B = new SystemMessage();
-//        s_B.messageNumber = 0;
-//        if (Prod_Cap < Opt_Rose+Opt_Noir)
-//        {
-//            s_B.showSystemMessage("w1: Insufficient production capacity to produce the optimal mix, please reduce or adjust the capacity of labor & grape volume!",sys_msg_txt);
-//        }
-//        if (Opt_Rose*Grape_Rose + Opt_Noir*Grape_Noir < 0.9*Cap_Grape)
-//        {
-//            s_B.showSystemMessage("w2: Insufficient labor supplied to utilize the grape resource (less than 90%)!",sys_msg_txt);
-//        }
-//        if (Sur_Labor<0)
-//        {
-//            s_B.showSystemMessage("Er1a: Program bug is occurred, Labor Consumption cannot greater than its capacity!",sys_msg_txt);
-//        }
-//        if (Sur_Grape<0)
-//        {
-//            s_B.showSystemMessage("Er1b: Program bug is occurred, Grape Consumption cannot greater than its capacity!",sys_msg_txt);
-//        }
-
     }
 
 
@@ -285,8 +261,5 @@ public class functionBController extends Optimization{
             return false; // not all the input values are initialized
         }
     }
-
-
-
-
+    
 }

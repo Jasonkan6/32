@@ -143,7 +143,9 @@ public class functionAController extends Optimization {
     float Prc_Rose_Float_A = -1;
     float Prc_Noir_Float_A = -1;
     int Fixed_Costs_A = -1;
-
+//    public int set_Num_Week (){
+//      return Integer.parseInt(Num_Week.setText(""));
+//    };
     public boolean initialize() {
         compInit initializer_A = new compInit();
         Num_Week.focusedProperty().addListener((observable, oldValue, newValue) -> {
@@ -156,7 +158,6 @@ public class functionAController extends Optimization {
                 }
             }
         });
-
         Cap_Labor.focusedProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue) { // this component loses focus
                 if (initializer_A.component_init(Cap_Labor, true, false, 0, true, 0)==true)
@@ -221,8 +222,9 @@ public class functionAController extends Optimization {
 
     }
     @FXML
-    private boolean getDefaultValue(InputMethodEvent event) {
+    public boolean getDefaultValue() {
         if(Num_Week.getText() == ""){Num_Week.setText("01");Num_Week_A = Integer.parseInt(Num_Week.getText());}
+
         if(Cap_Grape.getText() == ""){Cap_Grape.setText("5000"); Cap_Grape_Int_A = Integer.parseInt(Cap_Grape.getText());}
         if(Cap_Labor.getText() == ""){Cap_Labor.setText("12000"); Cap_Labor_Int_A = Integer.parseInt(Cap_Labor.getText());}
         if(Prc_Noir.getText() == ""){Prc_Noir.setText("22"); Prc_Noir_Float_A = Float.parseFloat(Prc_Noir.getText());}
@@ -240,8 +242,8 @@ public class functionAController extends Optimization {
 
     public void toexit(ActionEvent actionEvent) {Main.stage.setScene(Main.scene);
     }
-    public void toclick(ActionEvent actionEvent) {
-
+    public Object[] toclick(ActionEvent actionEvent) {
+        getDefaultValue();
         Object[] func_A = Opt_A(Cap_Grape_Int_A, Cap_Labor_Int_A, Prc_Rose_Float_A, Prc_Noir_Float_A, Fixed_Costs_A);
         System.out.println("Opt_Profit:" + func_A[0]);
 
@@ -252,16 +254,7 @@ public class functionAController extends Optimization {
         or_Prod_Vol_Noir_A.setText(String.valueOf(func_A[2]));
         or_Prod_Vol_Total_A.setText(String.valueOf((int)func_A[1] + (int)func_A[2]));
 
-        //Warning messages condition
-//        SystemMessage s_A = new SystemMessage();
-//        s_A.messageNumber = 0;
-//
-//        if ((int)func_A[1] + (int)func_A[2] > Prod_Cap * Num_Week_A){
-//            s_A.showSystemMessage("w1: Insufficient production capacity to produce the optimal mix, please reduce or adjust the capacity of labor & grape volum!", systemMessageLabel_A);
-//        }
-//        if ((int)func_A[1]*Grape_Rose + (int)func_A[2]*Grape_Noir < 0.9 * Cap_Grape_Int_A){
-//            s_A.showSystemMessage("w2: Insufficient labor supplied to utilize the grape resource (less than 90%)!", systemMessageLabel_A);
-//        }
+
         SysMessenger msg = new SysMessenger();
         Vector<String> Sys_Msgs_A = new Vector<>();
         if ((int)func_A[1] + (int)func_A[2] > Prod_Cap * Num_Week_A)
@@ -274,6 +267,7 @@ public class functionAController extends Optimization {
         }
 
         msg.showSystemMessage(systemMessageLabel_A, Sys_Msgs_A);
+        return new Object[]{func_A[0], func_A[1], func_A[2], func_A[3]};
 
     }
 }
