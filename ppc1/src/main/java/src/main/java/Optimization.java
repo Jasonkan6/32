@@ -1,5 +1,7 @@
 package src.main.java;
 
+import java.util.Vector;
+
 import static java.lang.Math.min;
 
 public class Optimization {
@@ -33,7 +35,27 @@ public class Optimization {
         }
         return new Object[]{Opt_Profit, x_out, y_out, Opt_Margin};
     };
-    public void Opt_BC(){
+    public Object[] Opt_BC(int Grape_Cap, int Labor_Cap, double Rose_Prc, double Noir_Prc){
+        int opt_rose = 0;
+        int opt_noir = 0;
+        int opt_rev = 0;
+        for (int i = 0; i<=Grape_Cap/Grape_Rose; i++) // iterate through possible litres of grape rose
+        {
+            for (int j = 0; j<=Grape_Cap/Grape_Noir; j++) // iterate through possible litres of grape noir
+            {
+                if (Grape_Rose*i+Grape_Noir*j<=Grape_Cap && i*Labor_Rose+j*Labor_Noir<=Labor_Cap)
+                {
+                    double revenue = i*Rose_Prc + j*Noir_Prc;
+                    if (revenue>opt_rev)
+                    {
+                        opt_rose = i;
+                        opt_noir = j;
+                        opt_rev = (int)revenue;
+                    }
+                }
+            }
+        }
 
+        return new Object[]{opt_rev, opt_rose, opt_noir};
     }
 }
