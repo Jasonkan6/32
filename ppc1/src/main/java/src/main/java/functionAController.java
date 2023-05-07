@@ -148,46 +148,66 @@ public class functionAController extends Optimization {
         compInit initializer_A = new compInit();
         Num_Week.focusedProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue) { // this component loses focus
-                if (initializer_A.component_init(Num_Week, true, true, 15, true, 01) == true)
+                String init = initializer_A.component_init(Num_Week, true, true, 15, true, 01);
+                if (init == "desired")
                 {
                     Num_Week_A = Integer.parseInt(Num_Week.getText());
                     System.out.println("Num_Week_A"+Integer.parseInt(Num_Week.getText()));
-
+                }
+                else if (init!="")
+                {
+                    initializer_A.gen_alert(init);
                 }
             }
         });
 
         Cap_Labor.focusedProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue) { // this component loses focus
-                if (initializer_A.component_init(Cap_Labor, true, false, 0, true, 0)==true)
+                String init = initializer_A.component_init(Cap_Labor, true, false, 0, true, 0);
+                if (init=="desired")
                 {
                     Cap_Labor_Int_A = Integer.parseInt(Cap_Labor.getText());
                     System.out.println("Cap_Labor_A"+Cap_Labor_Int_A);
+                }
+                else if (init!="")
+                {
+                    initializer_A.gen_alert(init);
                 }
             }
         });
         Cap_Grape.focusedProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue) { // this component loses focus
-                if (initializer_A.component_init(Cap_Grape, true, false, 0, true, 0)==true)
+                String init = initializer_A.component_init(Cap_Grape, true, false, 0, true, 0);
+                if (init=="desired")
                 {
                     Cap_Grape_Int_A = Integer.parseInt(Cap_Grape.getText());
                     System.out.println("Cap_Grape_A"+Cap_Grape_Int_A);
+                }
+                else if (init!= "")
+                {
+                    initializer_A.gen_alert(init);
                 }
             }
         });
         Fixed_Costs.focusedProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue) { // this component loses focus
-                if (initializer_A.component_init(Fixed_Costs, true, false, 0, true, 0)==true)
+                String init = initializer_A.component_init(Fixed_Costs, true, false, 0, true, 0);
+                if (init=="desired")
                 {
                     Fixed_Costs_A = Integer.parseInt(Fixed_Costs.getText());
                     System.out.println("Fixed_Costs_A"+Fixed_Costs_A);
+                }
+                else if (init!="")
+                {
+                    initializer_A.gen_alert(init);
                 }
             }
         });
 
         Prc_Rose.focusedProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue) { // this component loses focus
-                if (initializer_A.component_init(Prc_Rose, false, false, 0, true, 0)==true)
+                String init = initializer_A.component_init(Prc_Rose, false, false, 0, true, 0);
+                if (init=="desired")
                 {
                     Prc_Rose_Float_A = Float.parseFloat(Prc_Rose.getText());
                     DecimalFormat df = new DecimalFormat("#,##0.00");
@@ -195,18 +215,27 @@ public class functionAController extends Optimization {
                     Prc_Rose.setText(formattedNumber);
                     System.out.println("Prc_Rose_Float_A"+formattedNumber);
                 }
+                else if(init!="")
+                {
+                    initializer_A.gen_alert(init);
+                }
             }
         });
 
         Prc_Noir.focusedProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue) { // this component loses focus
-                if (initializer_A.component_init(Prc_Rose, false, false, 0, true, 0)==true)
+                String init = initializer_A.component_init(Prc_Rose, false, false, 0, true, 0);
+                if (init=="desired")
                 {
                     Prc_Rose_Float_A = Float.parseFloat(Prc_Noir.getText());
                     DecimalFormat df = new DecimalFormat("#,##0.00");
                     String formattedNumber = df.format(Prc_Rose_Float_A);
                     Prc_Noir.setText(formattedNumber);
                     System.out.println("Prc_Noir_Float_A"+formattedNumber);
+                }
+                else if (init!="")
+                {
+                    initializer_A.gen_alert(init);
                 }
             }
         });

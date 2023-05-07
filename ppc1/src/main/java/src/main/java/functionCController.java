@@ -153,52 +153,70 @@ public class functionCController extends Optimization {
         compInit initializer = new compInit();
         Num_Week_C.focusedProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue) { // this component loses focus
-                if (initializer.component_init(Num_Week_C, true, true, 2315, true, 2301) == true)
+                String init = initializer.component_init(Num_Week_C, true, true, 2315, true, 2301);
+                if (init == "desired")
                 {
                     Num_Weeks_Int = Integer.parseInt(Num_Week_C.getText());
+                }
+                else if (init!="")
+                {
+                    initializer.gen_alert(init);
                 }
             }
         });
 
         Cap_Labor_C.focusedProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue) { // this component loses focus
-                if (initializer.component_init(Cap_Labor_C, true, false, 0, true, 0)==true)
+                String init = initializer.component_init(Cap_Labor_C, true, false, 0, true, 0);
+                if (init=="desired")
                 {
                     Cap_Labor_Int = Integer.parseInt(Cap_Labor_C.getText());
                     System.out.println("Cap_Labor_C"+Cap_Labor_Int);
-
+                }
+                else if (init!="")
+                {
+                    initializer.gen_alert(init);
                 }
             }
         });
 
         Cap_Grape_C.focusedProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue) { // this component loses focus
-                if (initializer.component_init(Cap_Grape_C, true, false, 0, true, 0)==true)
+                String init = initializer.component_init(Cap_Grape_C, true, false, 0, true, 0);
+                if (init=="desired")
                 {
                     Cap_Grape_Int = Integer.parseInt(Cap_Grape_C.getText());
                     System.out.println("Cap_Grape_C"+Cap_Grape_Int);
-
+                }
+                else if (init!="")
+                {
+                    initializer.gen_alert(init);
                 }
             }
         });
 
         Prc_Rose_C.focusedProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue) { // this component loses focus
-                if (initializer.component_init(Prc_Rose_C, false, false, 0, true, 0)==true)
+                String init = initializer.component_init(Prc_Rose_C, false, false, 0, true, 0);
+                if (init=="desired")
                 {
                     Prc_Rose_Float = Float.parseFloat(Prc_Rose_C.getText());
                     DecimalFormat df = new DecimalFormat("#,##0.00");
                     String formattedNumber = df.format(Prc_Rose_Float);
                     Prc_Rose_C.setText(formattedNumber);
                     System.out.println("Prc_Rose_C"+formattedNumber);
-
+                }
+                else if (init!="")
+                {
+                    initializer.gen_alert(init);
                 }
             }
         });
 
         Prc_Noir_C.focusedProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue) { // this component loses focus
-                if (initializer.component_init(Prc_Noir_C, false, false, 0, true, 0)==true)
+                String init = initializer.component_init(Prc_Noir_C, false, false, 0, true, 0);
+                if (init=="desired")
                 {
                     Prc_Noir_Float = Float.parseFloat(Prc_Noir_C.getText());
                     DecimalFormat df = new DecimalFormat("#,##0.00");
@@ -207,23 +225,37 @@ public class functionCController extends Optimization {
                     System.out.println("Prc_Noir_C"+formattedNumber);
 
                 }
+                else if (init!="")
+                {
+                    initializer.gen_alert(init);
+                }
             }
         });
         Bko_Noir_C.focusedProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue) { // this component loses focus
-                if (initializer.component_init(Bko_Noir_C, true, false, 0, true, 0)==true)
+                String init = initializer.component_init(Bko_Noir_C, true, false, 0, true, 0);
+                if (init=="desired")
                 {
                     Bko_Noir_Int = Integer.parseInt(Bko_Noir_C.getText());
                     System.out.println("Bko_Noir_C"+Bko_Noir_Int);
+                }
+                else if (init!="")
+                {
+                    initializer.gen_alert(init);
                 }
             }
         });
         Bko_Rose_C.focusedProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue) { // this component loses focus
-                if (initializer.component_init(Bko_Rose_C, true, false, 0, true, 0)==true)
+                String init = initializer.component_init(Bko_Rose_C, true, false, 0, true, 0);
+                if (init=="desired")
                 {
                     Bko_Rose_Int = Integer.parseInt(Bko_Rose_C.getText());
                     System.out.println("Bko_Rose_C"+Bko_Rose_Int);
+                }
+                else if (init!="")
+                {
+                    initializer.gen_alert(init);
                 }
             }
         });
