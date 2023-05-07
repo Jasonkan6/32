@@ -20,7 +20,7 @@ public class SysMessengerTest {
     public void testShowSystemMessage_empty()
     {
         SysMessenger sysMessenger = new SysMessenger();
-        TextField sys_msg_txt = new TextField();
+        Text sys_msg_txt = new Text();
         Vector<String> messages = new Vector<String>();
         String messageText = sysMessenger.showSystemMessage(sys_msg_txt, messages);
         assertEquals("", messageText);
@@ -31,7 +31,7 @@ public class SysMessengerTest {
     public void testShowSystemMessage_Valid()
     {
         SysMessenger sysMessenger = new SysMessenger();
-        TextField sys_msg_txt = new TextField();
+        Text sys_msg_txt = new Text();
         Vector<String> messages = new Vector<String>();
         messages.add("w1: Insufficient production capacity to produce the optimal mix, please reduce or adjust the capacity of labor & grape volume!");
         messages.add("Er1a: Program bug is occurred, Labor Consumption cannot greater than its capacity!");

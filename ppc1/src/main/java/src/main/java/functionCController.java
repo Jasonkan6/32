@@ -6,6 +6,7 @@ import javafx.scene.control.*;
 import javafx.scene.input.InputMethodEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Line;
+import javafx.scene.text.Text;
 
 import java.text.DecimalFormat;
 import java.util.Vector;
@@ -138,7 +139,7 @@ public class functionCController extends Optimization {
     private TextField or_Prod_Vol_Total;
 
     @FXML
-    private TextField systemMessageLabel;
+    private Text systemMessageLabel;
 
     @FXML
     private Line vLine3;
