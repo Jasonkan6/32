@@ -128,51 +128,76 @@ public class functionBController extends Optimization{
         compInit initializer = new compInit();
         weekOfYear_tf.focusedProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue) { // this component loses focus
-                if (initializer.component_init(weekOfYear_tf, true, true, 2315, true, 2301) == true)
+                String init = initializer.component_init(weekOfYear_tf, true, true, 2315, true, 2301);
+                if (init == "desired")
                 {
                     weekOfYear = Integer.parseInt(weekOfYear_tf.getText());
+                }
+                else if (init!="")
+                {
+                    initializer.gen_alert(init);
                 }
             }
         });
 
         Cap_Labor_tf.focusedProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue) { // this component loses focus
-                if (initializer.component_init(Cap_Labor_tf, true, false, 0, true, 0)==true)
+                String init = initializer.component_init(Cap_Labor_tf, true, false, 0, true, 0);
+                if (init == "desired")
                 {
                     Cap_Labor = Integer.parseInt(Cap_Labor_tf.getText());
+                }
+                else if (init!="")
+                {
+                    initializer.gen_alert(init);
                 }
             }
         });
 
         Cap_Grape_tf.focusedProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue) { // this component loses focus
-                if (initializer.component_init(Cap_Grape_tf, true, false, 0, true, 0)==true)
+                String init = initializer.component_init(Cap_Grape_tf, true, false, 0, true, 0);
+                if (init=="desired")
                 {
                     Cap_Grape = Integer.parseInt(Cap_Grape_tf.getText());
+                }
+                else if (init!="")
+                {
+                    initializer.gen_alert(init);
                 }
             }
         });
 
         Prc_Rose_tf.focusedProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue) { // this component loses focus
-                if (initializer.component_init(Prc_Rose_tf, false, false, 0, true, 0)==true)
+                String init = initializer.component_init(Prc_Rose_tf, false, false, 0, true, 0);
+                if (init=="desired")
                 {
                     Prc_Rose = Double.parseDouble(Prc_Rose_tf.getText());
                     DecimalFormat df = new DecimalFormat("#,##0.00");
                     String formattedNumber = df.format(Prc_Rose);
                     Prc_Rose_tf.setText(formattedNumber);
                 }
+                else if (init!="")
+                {
+                    initializer.gen_alert(init);
+                }
             }
         });
 
         Prc_Noir_tf.focusedProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue) { // this component loses focus
-                if (initializer.component_init(Prc_Noir_tf, false, false, 0, true, 0)==true)
+                String init = initializer.component_init(Prc_Noir_tf, false, false, 0, true, 0);
+                if (init=="desired")
                 {
                     Prc_Noir = Double.parseDouble(Prc_Noir_tf.getText());
                     DecimalFormat df = new DecimalFormat("#,##0.00");
                     String formattedNumber = df.format(Prc_Noir);
                     Prc_Noir_tf.setText(formattedNumber);
+                }
+                else if (init!="")
+                {
+                    initializer.gen_alert(init);
                 }
             }
         });
@@ -261,5 +286,5 @@ public class functionBController extends Optimization{
             return false; // not all the input values are initialized
         }
     }
-    
+
 }
